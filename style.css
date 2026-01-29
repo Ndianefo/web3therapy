@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind utilities;
+
+/* Custom Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate-fade-in-down {
+    animation-name: fadeInDown;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+/* Scrollbar styling for today's list */
+#today-list::-webkit-scrollbar {
+    width: 6px;
+}
+#today-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+#today-list::-webkit-scrollbar-thumb {
+    background: #d1d5db; 
+    border-radius: 3px;
+}
+#today-list::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af; 
+}
+
+/* Utility to hide input default icons if needed, though Tailwind mostly handles reset */
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
